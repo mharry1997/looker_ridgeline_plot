@@ -22,7 +22,7 @@ const visObject = {
           sizeWhole = 640 - marginWhole.left - marginWhole.right
       console.log(data)
       // Create the svg area
-      const svg = this.svg
+      const svg = d3.select(element)
         .append("svg")
           .attr("width", sizeWhole  + marginWhole.left + marginWhole.right)
           .attr("height", sizeWhole  + marginWhole.top + marginWhole.bottom)
