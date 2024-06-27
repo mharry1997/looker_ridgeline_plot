@@ -20,12 +20,13 @@ const visObject = {
       // Dimension of the whole chart. Only one size since it has to be square
       const marginWhole = {top: 10, right: 10, bottom: 10, left: 10},
           sizeWhole = 640 - marginWhole.left - marginWhole.right
-      
+      console.log(data)
       // Create the svg area
-      const svg = d3.select(element)
+      const svg = this.svg
         .append("svg")
           .attr("width", sizeWhole  + marginWhole.left + marginWhole.right)
           .attr("height", sizeWhole  + marginWhole.top + marginWhole.bottom)
+        .html('')  // Clear previous
         .append("g")
           .attr("transform", `translate(${marginWhole.left},${marginWhole.top})`);
       
@@ -35,7 +36,7 @@ const visObject = {
         .concat(queryResponse.fields.measures.map(field => field.name))
         .filter(field => !field.is_hidden);
       console.log(fields)
-      const identifier = fields.splice(config.category,1);
+      const identifier = fields.splice(4,1);
       console.log(identifier)
       console.log(fields)
       const numVar = 4
