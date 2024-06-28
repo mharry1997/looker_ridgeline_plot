@@ -20,7 +20,7 @@ const visObject = {
   updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Assuming 'element' is selected correctly, the following line will find the 'pre' tag and populate it
     const pre = element.querySelector('pre');
-    pre.innerHTML = queryResponse
+    pre.innerHTML = JSON.stringify(queryResponse, null, 2);  // Format the JSON output
 
     doneRendering();  // Call this to inform Looker the visualization has finished rendering
   }
